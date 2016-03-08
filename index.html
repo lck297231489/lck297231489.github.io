@@ -190,7 +190,248 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/26/html/" data-id="cil8qeotm0000k6djbptxo6dk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/26/html/" data-id="ciljhfqzc0002efdjpyepnxt3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css3 2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/26/css3 2/" class="article-date">
+  <time datetime="2016-02-25T16:00:00.000Z" itemprop="datePublished">2016-02-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/26/css3 2/">css3（下）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#再来补充下css3一些重要知识</p>
+<p>##盒模型</p>
+<p>###标准盒模型</p>
+<p><img src="http://images.cnitblog.com/blog/347002/201409/121710262933336.jpg"></p>
+<p>###外盒模型</p>
+<blockquote>
+<p>元素空间宽度 = content width + padding + border + margin的宽度</p>
+<p>元素空间高度 = content height + padding + border + margin的高度</p>
+</blockquote>
+<p>###内盒模型</p>
+<blockquote>
+<p>元素宽度 = content width + padding + border的宽度</p>
+<p>元素高度 = content height + padding + border的高度</p>
+</blockquote>
+<h2 id="IE盒模型-当IE6-8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。"><a href="#IE盒模型-当IE6-8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。" class="headerlink" title="IE盒模型(当IE6~8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。)"></a>IE盒模型(当IE6~8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。)</h2><p><img src="http://images.cnitblog.com/blog/347002/201409/121710451993093.jpg"></p>
+<p>###外盒模型</p>
+<blockquote>
+<p>元素空间宽度 = content width + margin的宽度</p>
+<p>元素空间高度 = content height + margin的高度</p>
+</blockquote>
+<p>###内盒模型</p>
+<blockquote>
+<p>元素宽度 = content width</p>
+<p>元素高度 = content height</p>
+<p><code>box-sizing：content-box | border-box;</code></p>
+<p>box-sizing有三个值，默认是content-box（表示元素使用W3C盒子模型），而border-box（表示元素使用IE盒子模型），inherit（从父元素上继承）</p>
+</blockquote>
+<p>##float 浮动</p>
+<blockquote>
+<p><code>float:left; float:right;</code></p>
+<p>具有包裹性 本意作用是做文字环绕 float布局只是歪打正着的产物</p>
+</blockquote>
+<p>##清除浮动</p>
+<blockquote>
+<p><code>overflow：visible;hidden;scroll;</code></p>
+<p><code>overflow:visible;</code>默认值;</p>
+<p><code>overflow:hidden;</code>将所有超出盒子的所有内容都给隐藏掉</p>
+<p><code>overflow:scroll;</code>有超出盒子内容时 就会出现滚动条</p>
+<p><code>overflow:auto;</code>在必需时对象内容才会被裁切或显示滚动条</p>
+</blockquote>
+<pre><code>.clear:after {
+
+    content:&quot;.&quot;;
+
+    height:0;ß
+
+    visibility:hidden;
+
+    display:block;
+
+    clear:both;
+
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/26/css3 2/" data-id="ciljhfqyv0000efdjf0i4m28t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/26/js/" class="article-date">
+  <time datetime="2016-02-25T16:00:00.000Z" itemprop="datePublished">2016-02-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/26/js/">javaScript(上）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#整理Javascript一些知识点</p>
+<p><img src="http://imgsrc.baidu.com/baike/pic/item/54baacfbe5b7116e4e4aea4b.jpg"></p>
+<blockquote>
+<p>javascript  浏览器脚本语言 最大的特点就是单线程了。JavaScript的主要用途是与用户互动，以及操作DOM。负责内容 样式 行为分离环节中的分离部分。</p>
+</blockquote>
+<p>##js的组成 </p>
+<blockquote>
+<p>###ECMAScript<br>核心 几乎没有兼容问题 担任解析器的角色 处理我们的逻辑代码</p>
+<p>###DOM<br>文档对象模型；文档指的就是网页；把网页变成一个JS可以操作的对象；给了JS可以操作页面元素的能力；document;有一些兼容性问题；</p>
+<p>###BOM<br>浏览器对象模型；给了JS操作浏览器的能力；window；有许多兼容性问题</p>
+</blockquote>
+<p>##js的引用</p>
+<blockquote>
+<p>外部文件 script标签 src属性</p>
+<p>内部 script标签区域</p>
+</blockquote>
+<p>注释方式 单行注释  多行 注释</p>
+<p>##js的数据类型</p>
+<p>###基本类型</p>
+<blockquote>
+<p>1.Underfined</p>
+<p>在使用var声明变量，但未对其加以初始化时，这个变量的类型就是undefined，且其默认初始化值为undefined.对未声明与初始化的变量，直接使用，那么这个变量的类型也是undefined，但是没有默认初始化值。type test;//undefined  直接调用就会报错</p>
+<p>2.Null</p>
+<p>null类型的默认值是null，表示一个空对象指针,如果定义的变量准备在将来用于保存对象,那么就该将该变量初始化为null。</p>
+<p>3.Boolean</p>
+<p>该类型有两个值：true false</p>
+<p>Boolean()方法 可以转换其他数据类型为布尔值</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/94752-7c5eb2f781cbd6f6.png"></p>
+<blockquote>
+<p>4.Number</p>
+<p>整数 可以通过10进制 8进制 16进制表示</p>
+<p>浮点数 该数值必须包含一个小数点，小数点后面必须有一位数字，如果小数点后只有0，自动转换成整数浮点数占据的空间内存是内存的两倍，极大极小的数字会用e科学表示法。</p>
+<p>NaN 非数</p>
+</blockquote>
+<pre><code>1、即非数值，是一个特殊的值，这个数值用于表示一个本来要返回数值的操作数，未返回数值的情况。比如任何数值除以0，本是不符合规范的，js里，这样的操作返回NaN（但是实际上，只有0除以0时返回NaN，其他则无穷值）。
+2、NaN有两个不同寻常的特点：任何涉及NaN的操作都会返回NaN，NaN值与任何值都不相等，包括本身。
+3、isNaN()函数，这个函数可以判断，传递的参数是否“不是数值”这里涉及数值转换的问题，例如“10”这个字符串就可以转换为10，但是“blue”这个字符串则无法转换为数字，所以isNaN(&quot;blue&quot;)==true
+
+Number() 可以    任何类型
+
+parseInt()  parseFloat() 只用于字符串类型
+</code></pre><blockquote>
+<p>5.string</p>
+<p>‘’ “”单引号 双引号</p>
+<p>基本类型的特点：</p>
+<p>基本类型的值是不可变得</p>
+<p>复杂对象类型 Object 对象是属性和方法的集合</p>
+<p>基本类型以外 就是引用类型</p>
+<p>引用类型的特点</p>
+<p>引用类型的值是可变的    </p>
+</blockquote>
+<p>###复杂数据类型</p>
+<pre><code>object 对象类型
+
+Array 数组也是对象
+
+Function 函数
+</code></pre><p>##变量 var (let const)</p>
+<blockquote>
+<p>变量是一个杯子，它的类型是由它里面存放的东西决定的     </p>
+</blockquote>
+<pre><code>可以通过 typeof( ）检测出元素的类型
+</code></pre><blockquote>
+<p>命名规范 一般推荐驼峰式命名</p>
+</blockquote>
+<p>##流程控制语句：</p>
+<blockquote>
+<p>if 最基本的条件判断语句</p>
+</blockquote>
+<pre><code>if( 10 &lt; 20 ){
+
+}else{
+
+}
+</code></pre><blockquote>
+<p>for 循环    </p>
+</blockquote>
+<pre><code>for(var i = 0 ; i&lt; index.length;i++){ }
+</code></pre><blockquote>
+<p>switch</p>
+<p>for-in 遍历对象</p>
+<p>forEach 遍历数组</p>
+<p>try catch</p>
+<p>width</p>
+<p>eval</p>
+</blockquote>
+<p>##作用域</p>
+<p>###this</p>
+<blockquote>
+<p>this是Javascript语言的一个关键字。</p>
+<p>它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用</p>
+<p>随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象。</p>
+<ol>
+<li><p>普通函数调用</p>
+</li>
+<li><p>作为对象方法的调用</p>
+</li>
+<li><p>作为构造函数调用</p>
+</li>
+<li><p>apply() call()</p>
+</li>
+</ol>
+<p>“构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上</p>
+<p>用构造函数生成实例对象，有一个缺点，那就是无法共享属性和方法。</p>
+</blockquote>
+<p>###继承</p>
+<blockquote>
+<p>对象之间的继承方法</p>
+<ol>
+<li>构造函数绑定</li>
+</ol>
+<p>使用call或apply方法，将父对象的构造函数绑定在子对象上</p>
+<p>任何一个prototype对象都有一个constructor属性，指向它的构造函数</p>
+<p>每一个实例也有一个constructor属性，默认调用prototype对象的constructor属性。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/26/js/" data-id="ciljhfqz90001efdjli3zkzq0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -326,96 +567,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/26/css3/" data-id="cil8qeots0001k6djro3mrxpi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-css3 2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/26/css3 2/" class="article-date">
-  <time datetime="2016-02-25T16:00:00.000Z" itemprop="datePublished">2016-02-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/26/css3 2/">css3（下）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#再来补充下css3一些重要知识</p>
-<p>##盒模型</p>
-<p>###标准盒模型</p>
-<p><img src="http://images.cnitblog.com/blog/347002/201409/121710262933336.jpg"></p>
-<p>###外盒模型</p>
-<blockquote>
-<p>元素空间宽度 = content width + padding + border + margin的宽度</p>
-<p>元素空间高度 = content height + padding + border + margin的高度</p>
-</blockquote>
-<p>###内盒模型</p>
-<blockquote>
-<p>元素宽度 = content width + padding + border的宽度</p>
-<p>元素高度 = content height + padding + border的高度</p>
-</blockquote>
-<h2 id="IE盒模型-当IE6-8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。"><a href="#IE盒模型-当IE6-8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。" class="headerlink" title="IE盒模型(当IE6~8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。)"></a>IE盒模型(当IE6~8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。)</h2><p><img src="http://images.cnitblog.com/blog/347002/201409/121710451993093.jpg"></p>
-<p>###外盒模型</p>
-<blockquote>
-<p>元素空间宽度 = content width + margin的宽度</p>
-<p>元素空间高度 = content height + margin的高度</p>
-</blockquote>
-<p>###内盒模型</p>
-<blockquote>
-<p>元素宽度 = content width</p>
-<p>元素高度 = content height</p>
-<p><code>box-sizing：content-box | border-box;</code></p>
-<p>box-sizing有三个值，默认是content-box（表示元素使用W3C盒子模型），而border-box（表示元素使用IE盒子模型），inherit（从父元素上继承）</p>
-</blockquote>
-<p>##float 浮动</p>
-<blockquote>
-<p><code>float:left; float:right;</code></p>
-<p>具有包裹性 本意作用是做文字环绕 float布局只是歪打正着的产物</p>
-</blockquote>
-<p>##清除浮动</p>
-<blockquote>
-<p><code>overflow：visible;hidden;scroll;</code></p>
-<p><code>overflow:visible;</code>默认值;</p>
-<p><code>overflow:hidden;</code>将所有超出盒子的所有内容都给隐藏掉</p>
-<p><code>overflow:scroll;</code>有超出盒子内容时 就会出现滚动条</p>
-<p><code>overflow:auto;</code>在必需时对象内容才会被裁切或显示滚动条</p>
-</blockquote>
-<pre><code>.clear:after {
-
-    content:&quot;.&quot;;
-
-    height:0;ß
-
-    visibility:hidden;
-
-    display:block;
-
-    clear:both;
-
-}
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/26/css3 2/" data-id="cil8qf6h00002k6djibqucv0e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/26/css3/" data-id="ciljhfqzd0003efdjh6a0om0g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -440,7 +592,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -456,11 +608,15 @@
           </li>
         
           <li>
-            <a href="/2016/02/26/css3/">css3（上）</a>
+            <a href="/2016/02/26/css3 2/">css3（下）</a>
           </li>
         
           <li>
-            <a href="/2016/02/26/css3 2/">css3（下）</a>
+            <a href="/2016/02/26/js/">javaScript(上）</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/26/css3/">css3（上）</a>
           </li>
         
       </ul>
