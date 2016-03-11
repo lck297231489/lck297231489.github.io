@@ -132,11 +132,275 @@
 </code></pre><blockquote>
 <p>原生对象转jquery对象<br>var div1 = document.getElementById(“div1”);<br>$(div1).css();</p>
 </blockquote>
+<p>##jQuery选择器的优势</p>
+<blockquote>
+<p>简洁的写法<br>支持CSS1到CSS3选择器<br>完善的处理机制</p>
+</blockquote>
+<p>##jQuery选择器的分类</p>
+<blockquote>
+<p>基本选择器</p>
+<p>层次选择器</p>
+<p>过滤选择器</p>
+</blockquote>
+<p>###基本选择器</p>
+<pre><code>1.#id 
 
+描述：根据给定的id匹配一个元素 
+
+返回：单个元素
+
+实例：$(“#demo”)选取id为demo的元素
+
+2..class
+
+返回：集合元素
+
+描述：根据给定的类名匹配元素
+
+实例：$(“#demo”)选取id为demo的元素
+
+3.element 
+
+返回：集合元素
+
+描述：根据给定的元素名匹配元素
+
+实例：$(“p”)选取所有的&lt;p&gt;元素
+
+4.*
+
+返回：集合元素
+
+描述：匹配所有元素
+
+实例：$(“*”)选取所有的元素；
+
+5.Selector1,selector2,…，selectorN
+
+返回：集合元素
+
+描述：将每一个选择器匹配到的元素合并后一起返回
+
+实例：$(“div,span,p.myClass”)选取所有&lt;div&gt;，&lt;span&gt;和拥有class为myClass的&lt;p&gt;标签的一级组元素
+</code></pre><p>###层次选择器</p>
+<pre><code>1.$(“ancestor  desendant”)
+
+描述：选取ancestor元素里的所有desendant(后代)元素
+
+返回：集合元素
+
+实例：$(“div  span”)选取&lt;div&gt;里的所有的&lt;span&gt;元素
+
+2.$(“parent&gt;child”)
+
+描述：选取parent元素下的子元素
+
+返回：集合元素
+
+实例：$(“div&gt;span”)选取&lt;div&gt;元素下元素名是&lt;span&gt;的子元素
+
+3.$(“prev+next”)
+
+描述：选取紧接在prev元素后的next元素
+
+返回：集合元素
+
+实例：$(“.one+div”)选取class为one的下一个&lt;div&gt;同辈元素
+
+4.$(“prev~siblings”)
+
+描述：匹配所有元素选取prev元素之后的所有siblings元素
+
+返回：集合元素
+
+实例：$(“#two~div”)选取id为two的元素后面的所有&lt;div&gt;同辈元素
+</code></pre><p>###基本过滤选择器</p>
+<pre><code>1.:first
+
+描述：选取第一个元素
+
+返回：单个元素
+
+实例：$(“#demo”)选取id为demo的元素$(“div :first”)选取所有&lt;div&gt;元素中第1个&lt;div&gt;元素
+
+2.:last
+
+描述：选取最后一个元素
+
+返回：单个元素
+
+实例：$(“div:last”)选取所有&lt;div&gt;元素中最后一个&lt;div&gt;元素
+
+3.:not(selector)
+
+描述：去除所有与给定选择器匹配的元素
+
+返回：集合元素
+
+实例：$(“input:not(.myClass)”)选取class不是myClass的&lt;input&gt;元素
+
+4.:even
+
+描述：匹配所有元素选取索引是偶数的所有元素，索引从0开始
+
+返回：集合元素
+
+实例：$(“input:even”)选取索引是偶数的&lt;input&gt;元素
+
+5.:odd
+
+描述：选取索引是奇数的所有元素，索引从0开始
+
+返回：集合元素
+
+实例：$(“input:odd”)选取索引是奇数的&lt;input&gt;元素
+
+6.:eq(index)
+
+描述：选取索引等于index的元素(index从0开始)
+
+返回：单个元素
+
+实例：$(“input:eq(1)”)选取索引等于1的&lt;input&gt;元素
+
+7.:gt(index)
+
+描述：选取索引大于index的元素(index从0开始)
+
+返回：集合元素
+
+8.:lt(index) 
+
+描述：选取索引小于index的元素(index从0开始)
+
+返回：集合元素
+
+实例：$(“input:even”)选取索引是偶数的&lt;input&gt;元素
+</code></pre><h3 id="内容过滤选择器"><a href="#内容过滤选择器" class="headerlink" title="内容过滤选择器"></a>内容过滤选择器</h3><pre><code>1.:contains(text)
+
+描述：选取含有文本内容为“text”的元素
+
+返回：集合元素
+
+实例：$(‘div:contains(“测试”)’)选取包含文本“测试”的&lt;div&gt;元素
+
+2.:empty
+
+描述：选取不包含子元素或者文本的空元素
+
+返回：集合元素
+
+实例：$(‘div:empty’)选取不包含子元素和文本的&lt;div&gt;空元素
+
+3.:has(selector)
+
+描述：选取含有选择器所匹配的元素的元素
+
+返回：集合元素
+
+实例：$(‘div:has(p)’)选取含有&lt;p&gt;元素的&lt;div&gt;元素
+
+4.:parent
+
+描述：选取含有子元素或者文本的元素
+
+返回：集合元素
+
+实例：$(“div:parent”)选取拥有子元素或文本元素的&lt;div&gt;元素
+</code></pre><p>###属性过滤选择器</p>
+<pre><code>1.[attr]
+
+描述：选取拥有此属性的元素
+
+返回：集合元素        
+
+实例：$(“div[id]”)选取拥有属性id的元素
+
+2.[attr=value]
+
+描述：选取属性的值为value的元素
+
+返回：集合元素
+
+实例：$(“div[title=test]”)选取属性title为”test”的&lt;div&gt;元素
+
+3.[attr!=value]
+
+描述：选取属性的值不等于value的元素
+
+返回：集合元素
+
+实例：$(“div[title!=test]”)选取属性title不等于 ”test”的&lt;div&gt;元素
+
+4.attr^=value]
+
+描述：选取属性的值以value开始的元素
+
+返回：集合元素
+
+实例：$(“div[title^=test]”)选取属性title以”test”开始的&lt;div&gt;元素
+
+5.[attr$=value]
+
+描述：选取属性的值以value结束的元素
+
+返回：集合元素
+
+实例：$(“div[title$=test]”)选取属性title以”test”结束的&lt;div&gt;元素
+
+6.attr*=value]
+
+描述：选取属性的值含有value的元素
+
+返回：单个元素
+
+实例：$(“div[title*=test]”)选取属性title含有”test”的&lt;div&gt;元素
+
+7.[attr1][attr2][attrN]
+
+描述：选择满足所有属性选择器的元素
+
+返回：集合元素
+
+实例：$(“div[id][title$=‘test’]”)选取拥有属性id,并且属性title以”test”结束的&lt;div&gt;元素
+</code></pre><h3 id="子元素过滤选择器"><a href="#子元素过滤选择器" class="headerlink" title="子元素过滤选择器"></a>子元素过滤选择器</h3><pre><code>1.:nth-child(index/even/odd)
+
+描述：选取每个父元素下的第index个或者奇偶元素。index从1开始
+
+返回：集合元素
+
+实例：$(‘div:nth-child(1)’) 选取所有div中的，是其父标签的第一个子标签的div；$(‘div:eq(0)’);选取第一个div；
+
+2.:first-child
+
+描述：选取每个父元素的第一个子元素
+
+返回：集合元素
+
+实例：$(“ul li: first-child”)选取每个&lt;ul&gt;中第一个&lt;li&gt;元素
+
+      $(‘div:first’)选择所有div标签中的第一个。
+
+3.:last-child
+
+描述：选取每个父元素的最后一个子元素
+
+返回：集合元素
+
+实例：$(“ul li: last-child”)选取每个&lt;ul&gt;中最后一个&lt;li&gt;元素；$(‘div:last’)选择所有div标签中的最后一个。
+
+4.:only-child
+
+描述：如果某个元素是它父元素中唯一的子元素，那么将会被匹配。
+
+返回：集合元素
+
+实例：$(“ul li:only-child”)在&lt;ul&gt;中选取是惟一子元素的&lt;li&gt;元素
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/26/jquery/" data-id="cilnd66180002modjy1cs5c5w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/26/jquery/" data-id="cilnqz9cn000250djv9yqimcp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -271,7 +535,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/26/html/" data-id="cilnd66190003modjk8bkabll" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/26/html/" data-id="cilnqz9co000350dj4blqr654" class="article-share-link">Share</a>
       
       
     </footer>
@@ -360,7 +624,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/26/css3 2/" data-id="cilnd660t0000modjxp23xpwm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/26/css3 2/" data-id="cilnqz9c7000050dj1bozgn4i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -512,7 +776,7 @@ Function 函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/26/js/" data-id="cilnd66150001modjz4wgi0cb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/26/js/" data-id="cilnqz9ck000150djx8szvbzv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -648,7 +912,7 @@ Function 函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/26/css3/" data-id="cilnd661c0004modjuwx91zlw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/26/css3/" data-id="cilnqz9cq000450djthe48cet" class="article-share-link">Share</a>
       
       
     </footer>
